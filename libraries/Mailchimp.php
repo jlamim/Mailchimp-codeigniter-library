@@ -139,7 +139,7 @@ class Mailchimp {
 
         $this->apikey = $this->CI->config->item('mc_apikey');
 
-        if ($this->CI->config->item('mc_debug') == "") {
+        if (is_null($this->CI->config->item('mc_debug'))) {
             log_message('error', 'You must provide a MailChimp Debug.');
             show_error('You must provide a MailChimp Debug (TRUE or FALSE) in config/mailchimp.',500);
         } else{
